@@ -2,6 +2,7 @@
 const fbottomdiv = document.getElementById("fbottomdiv");
 const btnDark = document.querySelector(".btn-dark");
 const explorHotels = document.querySelector("#explorHotels");
+const profileIcon = document.querySelector("#profileIcon");
 
 function creatUser(username, password, phone, mail) {
   return {
@@ -83,12 +84,13 @@ var ref = firebase.database().ref("Users").on('value', function (response) {
 });
 
 
-if (window.localStorage.getItem('tempId') == 537) {
+if (window.localStorage.getItem('tempId') == 537 && explorHotels !== null) {
   explorHotels.style.color = "rgb(129, 206, 129)";
   fbottomdiv.style.display = "none";
   btnDark.innerHTML = "Sign out";
   btnDark.style.color = "rgb(129, 206, 129)";
   btnDark.style.borderColor = "rgb(129, 206, 129)";
+  profileIcon.style.display = "inline-block";
 
   btnDark.addEventListener("click", function(){
     window.localStorage.setItem('tempId', '');

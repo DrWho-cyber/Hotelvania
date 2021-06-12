@@ -30,8 +30,18 @@
     border-color: rgb(98, 150, 192); 
 }
 
+
+#profileIcon {
+    display: none;
+    position: absolute;
+    right: 400px;
+    font-size: larger;
+    color: rgb(21, 161, 21);
+    
+}
+
 .nav-link {
-    font-weight: 700;
+    font-weight: 600;
     font-size: 20px;
     margin-left: 10px;
     transition: 400ms;
@@ -40,7 +50,7 @@
 }
 
 #active {
-    color: rgb(98, 150, 192)!important;
+    color: rgb(57, 152, 230)!important;
     font-size: 21px;
 }
 
