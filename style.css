@@ -11,7 +11,8 @@
 
 .btn-dark {
     position: absolute;
-    right: 330px;
+    top: 25px;
+    right: 300px;
     color: rgb(98, 150, 192);
     font-family: Spectral, serif;
     border-color: rgb(98, 150, 192);
@@ -34,7 +35,7 @@
     font-size: 20px;
     margin-left: 10px;
     transition: 400ms;
-    color: white!important;
+    color: white;
 
 }
 

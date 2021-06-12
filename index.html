@@ -22,13 +22,13 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
     integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
     crossorigin="anonymous"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </head>
 
@@ -47,12 +47,12 @@
             <a class="nav-link navhome" id="active" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#" onclick="registrationAlert()">Explore Hotels</a>
+            <a class="nav-link" href="#" onclick="registrationAlert()" id='explorHotels'>Explore Hotels</a>
           </li>
         </ul>
-<button type="button" class="btn btn-dark"><a id="signIn" href="signIn.html">Sign in</a></button>
+        <button type="button" class="btn btn-dark"><a id="signIn" href="signIn.html">Sign in</a></button>
         <ul class="navbar-nav mr-auto ulright">
-          
+
           <li class="nav-item">
             <a class="nav-link" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
           </li>
@@ -202,11 +202,12 @@
 
   <footer>
     <div id="fbottomdiv">
-      
+
       <form id="formSignIn">
         <div class="form-group cardform">
           <div class="namePhone">
-            <div class="col"><h6>Registration</h6>
+            <div class="col">
+              <h6>Registration</h6>
               <label for="userName">Username</label>
               <input type="text" class="form-control" id="userName">
             </div>
@@ -225,11 +226,11 @@
           </div>
           <br>
           <div class="col">
-          <button type="submit" class="btn btn-primary submitbtn" onclick="creatNewUser()">Sign up</button>
-        </div>
+            <button type="submit" class="btn btn-primary submitbtn" onclick="creatNewUser()">Sign up</button>
+          </div>
         </div>
 
-        
+
       </form>
     </div>
 
@@ -237,22 +238,22 @@
     <div class="fuldiv">
       <ul class="navbar-nav mr-auto footerul">
         <li class="nav-item active">
-          <a class="nav-link" href="https://www.instagram.com/"><i class="fab fa-instagram" 
-              id="socialPlatrofrms" ></i></a>
+          <a class="nav-link" href="https://www.instagram.com/"><i class="fab fa-instagram"
+              id="socialPlatrofrms"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://www.facebook.com/"><i class="fab fa-facebook-f" 
-              id="socialPlatrofrms" ></i></a>
+          <a class="nav-link" href="https://www.facebook.com/"><i class="fab fa-facebook-f"
+              id="socialPlatrofrms"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://www.pinterest.com/"><i class="fab fa-pinterest-p" 
-              id="socialPlatrofrms" ></i></a>
+          <a class="nav-link" href="https://www.pinterest.com/"><i class="fab fa-pinterest-p"
+              id="socialPlatrofrms"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://twitter.com/"><i class="fab fa-twitter" id="socialPlatrofrms"  ></i></a>
+          <a class="nav-link" href="https://twitter.com/"><i class="fab fa-twitter" id="socialPlatrofrms"></i></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://www.youtube.com/"><i class="fab fa-youtube" id="socialPlatrofrms"  ></i></a>
+          <a class="nav-link" href="https://www.youtube.com/"><i class="fab fa-youtube" id="socialPlatrofrms"></i></a>
         </li>
       </ul>
     </div>
@@ -261,8 +262,8 @@
   </footer>
 
 
-<script src="main.js"></script>
-<script src="signIn.js"></script>
+  <script src="main.js"></script>
+  <script src="signIn.js"></script>
 </body>
 
 </html>
