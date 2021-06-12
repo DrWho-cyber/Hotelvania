@@ -1,0 +1,36 @@
+body {
+    background: steelblue!important;
+}
+
+#fbottomdiv {
+    color: white;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    max-width: 475px;
+    margin: auto;
+}
+
+.footerform {
+    justify-content: space-between;
+}
+
+button {
+    border: 1px solid black!important;
+    width: 100%!important;
+}
+
+/* input focus and textarea focus */
+
+input:focus, textarea:focus {
+    border: none!important;
+    border-bottom: solid 1px rgb(7, 7, 7)!important;
+    box-shadow: none!important;
+}
+
+/* the end */

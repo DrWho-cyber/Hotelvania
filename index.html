@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravelMore</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia&effect=fire">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Spectral|Rubik">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="responsive.css">
+  <script src="https://kit.fontawesome.com/907607145c.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+    integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+    crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+</head>
+
+<body>
+  <header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand font-effect-fire" href="#">TravelMore</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link navhome" id="active" href="#">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" onclick="registrationAlert()">Explore Hotels</a>
+          </li>
+        </ul>
+<button type="button" class="btn btn-dark"><a id="signIn" href="signIn.html">Sign in</a></button>
+        <ul class="navbar-nav mr-auto ulright">
+          
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.pinterest.com/"><i class="fab fa-pinterest-p"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.youtube.com/"><i class="fab fa-youtube"></i></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+  </header>
+
+  <main>
+    <section class="carouselArea">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="https://images.unsplash.com/photo-1584132967334-10e028bd69f7?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mjd8fGhvdGVsc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
+              class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://images.unsplash.com/photo-1537240937103-98b1d7a1c466?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MzJ8fGhvdGVsc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
+              class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://images.unsplash.com/photo-1573047330191-fb342b1be381?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDh8fGhvdGVsc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
+              class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://images.unsplash.com/photo-1566431226638-18535d1ace15?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NDR8fGhvdGVsc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
+              class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjN8fGhvdGVsc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
+              class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img
+              src="https://images.unsplash.com/photo-1574083438348-f4158ba994b3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NzN8fGhvdGVsc3xlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
+              class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+      <h1>Popular Ragions</h1>
+      <section class="popularRegions">
+
+        <div class="card" style="width: 20.5rem;">
+          <img src="http://gov.ge/uniInc.php?mode=img&src_jpg=files/53_74_897424_gal8_529846.jpg&im_new_w=200"
+            class="card-img-top" alt="...">
+          <div class="card-body">
+            <h4 class="card-title">Racha-lechkhumi and qvemo svaneti</h4>
+          </div>
+        </div>
+        <div class="card" style="width: 20.5rem;">
+          <img src="http://gov.ge/uniInc.php?mode=img&src_jpg=files/53_74_695752_gal8_689799.jpg&im_new_w=200"
+            class="card-img-top" alt="...">
+          <div class="card-body">
+            <h4 class="card-title">Mtskheta-Mtianeti</h4>
+          </div>
+        </div>
+        <div class="card" style="width: 20.5rem;">
+          <img src="http://gov.ge/uniInc.php?mode=img&src_jpg=files/53_74_429688_Ushguli2.jpg&im_new_w=200"
+            class="card-img-top" alt="...">
+          <div class="card-body">
+            <h4 class="card-title">Samegrelo Zemo-svaneti</h4>
+          </div>
+        </div>
+        <div class="card" style="width: 20.5rem;">
+          <img src="http://gov.ge/uniInc.php?mode=img&src_jpg=files/53_74_130123_gal8_417234.jpg&im_new_w=200"
+            class="card-img-top" alt="...">
+          <div class="card-body">
+            <h4 class="card-title">Imereti</h4>
+          </div>
+        </div>
+        <div class="card" style="width: 20.5rem;">
+          <img src="http://gov.ge/uniInc.php?mode=img&src_jpg=files/53_74_484261_signagi.jpg&im_new_w=200"
+            class="card-img-top" alt="...">
+          <div class="card-body">
+            <h4 class="card-title">kakheti</h4>
+          </div>
+        </div>
+        <div class="card" style="width: 20.5rem;">
+          <img src="http://gov.ge/uniInc.php?mode=img&src_jpg=files/53_74_847406_achara.jpg&im_new_w=200"
+            class="card-img-top" alt="...">
+          <div class="card-body">
+            <h4 class="card-title">Achara</h4>
+          </div>
+        </div>
+      </section>
+
+      <h1>News</h1>
+      <section class="newsFeed">
+
+        <div class="card" style="width: 20.5rem;">
+          <img
+            src="https://images.unsplash.com/photo-1556741533-6e6a62bd8b49?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8aG9zdHxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
+            class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">We’re happy to announce 2021’s world cup of mountain sports will be held in Bakuriani,
+              Georgia! 26-28 Feb – Ski cross; 3-5 [...]</p>
+          </div>
+        </div>
+        <div class="card" style="width: 20.5rem;">
+          <img
+            src="https://images.unsplash.com/photo-1615644256225-19c8af1b90d3?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8Zm9ydW18ZW58MHx8MHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
+            class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">MMP Forum Caucasus 2019 took place in Baku — the city of fire and winds. The 7th
+              international workshop in the field of MICE & Event was [...]</p>
+          </div>
+        </div>
+        <div class="card" style="width: 20.5rem;">
+          <img
+            src="https://images.unsplash.com/photo-1561490497-43bc900ac2d8?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8ZXhoaWJpdGlvbnxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60"
+            class="card-img-top" alt="...">
+          <div class="card-body">
+            <p class="card-text">We are pleased to announce that on the 30th of October, the Convention and Exhibition
+              Bureau of Georgia, in partnership with the “Turkish [...]</p>
+          </div>
+        </div>
+
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <div id="fbottomdiv">
+      
+      <form id="formSignIn">
+        <div class="form-group cardform">
+          <div class="namePhone">
+            <div class="col"><h6>Registration</h6>
+              <label for="userName">Username</label>
+              <input type="text" class="form-control" id="userName">
+            </div>
+            <div class="col">
+              <label for="password">password</label>
+              <input type="password" class="form-control" id="password">
+            </div>
+            <div class="col">
+              <label for="phone">Phone</label>
+              <input type="number" class="form-control phone" id="phone">
+            </div>
+          </div>
+          <div class="col">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+          </div>
+          <br>
+          <div class="col">
+          <button type="submit" class="btn btn-primary submitbtn" onclick="creatNewUser()">Sign up</button>
+        </div>
+        </div>
+
+        
+      </form>
+    </div>
+
+    </form>
+    <div class="fuldiv">
+      <ul class="navbar-nav mr-auto footerul">
+        <li class="nav-item active">
+          <a class="nav-link" href="https://www.instagram.com/"><i class="fab fa-instagram" 
+              id="socialPlatrofrms" ></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.facebook.com/"><i class="fab fa-facebook-f" 
+              id="socialPlatrofrms" ></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.pinterest.com/"><i class="fab fa-pinterest-p" 
+              id="socialPlatrofrms" ></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://twitter.com/"><i class="fab fa-twitter" id="socialPlatrofrms"  ></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.youtube.com/"><i class="fab fa-youtube" id="socialPlatrofrms"  ></i></a>
+        </li>
+      </ul>
+    </div>
+    <p style="text-align: center;">© 2021 by Tsotne Chkheidze</p>
+    </div>
+  </footer>
+
+
+<script src="main.js"></script>
+<script src="signIn.js"></script>
+</body>
+
+</html>
