@@ -38,12 +38,12 @@ function creatNewUser() {
   const phone = $("#phone").val()
   const email = $("#email").val()
   if (username == "" || password == "" || phone == "" || email == "") {
-    swal("All feilds are required!", "please try again!", "error");
+    alert("All feilds are required!, please try again!")
   } else {
     firebase.database().ref("Users/" + unicId).set(creatUser(username, password, phone, email));
     window.localStorage.setItem('user', username);
     window.localStorage.setItem('pass', password);
-    swal("You are signed!", "Thanks!", "success");
+    alert("You are registered!, Thanks!");
   }
 
   $("#formSignIn")[0].reset();
@@ -61,9 +61,12 @@ ref.on("value", (item) => {
 function registrationAlert() {
 
   if (document.getElementById("fbottomdiv").style.display == "none") {
-
+    window.location.href="exploreHotels.html";
   } else {
-    swal("registration required!", "please register!", "error");
+    swal("registration required!", "please register!", "error")
+    .then(() => {
+      window.location.href="index.html";
+  });
   }
 }
 

@@ -1,3 +1,4 @@
+
 .navbar {
     background-color: rgba(34, 34, 34, 0.986)!important;
 }
@@ -12,7 +13,7 @@
 .btn-dark {
     position: absolute;
     top: 25px;
-    right: 300px;
+    right: 40px;
     color: rgb(98, 150, 192);
     font-family: Spectral, serif;
     border-color: rgb(98, 150, 192);
@@ -34,7 +35,7 @@
 #profileIcon {
     display: none;
     position: absolute;
-    right: 400px;
+    right: 150px;
     font-size: larger;
     color: rgb(21, 161, 21);
     
@@ -42,14 +43,12 @@
 
 .nav-link {
     font-weight: 600;
-    font-size: 20px;
     margin-left: 10px;
     transition: 400ms;
-    color: white;
-
+    color: rgb(57, 152, 230)!important;
 }
 
-#active {
+.active {
     color: rgb(57, 152, 230)!important;
     font-size: 21px;
 }
@@ -59,14 +58,15 @@
 }
 
 .navhome {
+    font-size: 22px;
     margin-left: 10px;
     transition: 400ms;
-    color: white!important;
+    color: rgb(57, 152, 230)!important;
 }
 
 .nav-link:hover {
     color: rgb(98, 150, 192)!important;
-    font-size: 21px;
+    font-size: 23px;
 }
 
 .ulright i {
@@ -89,6 +89,7 @@
     text-shadow: 0 -0.05em 0.2em #fff, 0.01em -0.02em 0.15em rgb(214, 201, 12), 0.01em -0.05em 0.15em rgb(223, 180, 12), 0.02em -0.15em 0.2em rgb(204, 126, 10), 0.04em -0.2em 0.3em rgb(216, 106, 10), 0.05em -0.25em 0.4em rgb(207, 103, 13), 0.06em -0.2em 0.9em rgb(214, 81, 14), 0.1em -0.1em 1em rgb(216, 69, 15);
 }
 
+
 /* main */
 
 .carouselArea {
@@ -100,64 +101,28 @@
     object-fit: cover;
     height: 100%!important;
 }
-
-.popularRegions {
-    display: flex;
-    flex-wrap: wrap;
-    margin: auto;
-    justify-content: space-between;
+.searchResults {
+    min-height: 400px;
+    max-width: 1000px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   background-color: rgba(0, 0, 255, 0.383);
+   margin: auto;
 }
 
-.card {
-    margin-top: 5px;
-}
 
-.newsFeed {
-    margin: 30px auto;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-}
-
-h1 {
-    margin-top: 35px;
-    margin-bottom: 40px;
-    font-family: Spectral, serif;
-    font-size: 40px;
-}
-
-h5 {
-    font-family: Rubik, sans-serif;
-}
-
-a {
-    font-family: Rubik, sans-serif;
-    font-size: 16px;
-}
 
 /* footer */
-
-footer {
-    min-height: 100px;
-}
-
-#fbottomdiv {
+.fuldiv {
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    min-height: 270px;
-    max-width: 475px;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 50px;
     margin: auto;
 }
-
-#fbottomdiv h6 {
-    margin: 40px auto;
-    text-align: left;
-    font-family: Rubik, sans-serif;
-    font-size: 20px;
-    color: rgb(12, 12, 12);
-}
-
 .footerul {
     margin-right: 10px!important;
 }
@@ -174,19 +139,6 @@ footer {
     justify-content: space-around;
 }
 
-.fuldiv {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 200px;
-    height: 50px;
-    margin: auto;
-}
-
-.footerform {
-    justify-content: space-between;
-}
 
 #socialPlatrofrms {
     font-size: large;
@@ -194,13 +146,4 @@ footer {
     text-shadow: none;
 }
 
-/* input focus and textarea focus */
-
-input:focus, textarea:focus {
-    border: none!important;
-    border-bottom: solid 1px rgb(7, 7, 7)!important;
-    box-shadow: none!important;
-}
-
-/* the end */
 

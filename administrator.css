@@ -1,0 +1,81 @@
+body {
+    background-color: steelblue;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    color: white;
+    width: 20%;
+    margin: 100px auto;
+    margin-bottom: 50px;
+    justify-content: space-between;
+}
+
+h3 {
+    text-align: center;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid black;
+    border-radius: 1px;
+}
+
+textarea {
+    margin-top: 10px;
+    border: none;
+    border-radius: 1px;
+    border-bottom: 1px solid black;
+}
+
+input:focus {
+    border: none!important;
+    border-bottom: solid 1px rgb(7, 7, 7)!important;
+    box-shadow: none!important;
+}
+
+select:focus {
+    border: none!important;
+    box-shadow: none!important;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+textarea:focus {
+    border: none!important;
+    box-shadow: none!important;
+}
+
+.form-control {
+    margin-bottom: 3px;
+}
+
+.col-md-4 {
+    font-size: large!important;
+    letter-spacing: 0.5px;
+}
+
+.form-group {
+    margin-bottom: 0px;
+}
+
+.form-control-file {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    border-bottom: 1px solid white;
+}
+
+.btn-primary {
+    margin-top: 10px;
+}
+
+.btn-danger {
+width: 20%;
+position: absolute;
+margin: auto;
+left: 0px;
+right: 0px;
+}

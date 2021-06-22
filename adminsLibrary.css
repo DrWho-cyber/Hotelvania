@@ -1,0 +1,36 @@
+.adminCardsArea {
+    max-width: 40%;
+    margin: auto;
+    min-height: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.card img {
+    object-fit: contain;
+    /* thickness and color of border */
+    border-radius: 4px;
+    /* edge rounding of border */
+    width: 240px;
+    /* width of image (px or % or auto) */
+    height: 160px;
+    transition: 500ms;
+    margin: 10px auto;
+}
+
+.card img:hover {
+    transform: scale(2, 2);
+    z-index: 10;
+}
+
+.col-md-8 {
+    position: relative;
+}
+
+.btn {
+    margin-top: 10px;
+    margin-left: 5px;
+    width: 10%;
+}

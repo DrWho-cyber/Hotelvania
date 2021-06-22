@@ -50,7 +50,10 @@ function updateItems() {
             firebase.database().ref('Users/' + usersArray[i].id).update(creatUser(user, pass, phone, email));
             window.localStorage.setItem('user', user);
             window.localStorage.setItem('pass', pass);
-            swal("succesful update!", "data changed!", "success");
+            swal("succesful update!", "data changed!", "success")
+            .then(() => {
+                window.location.href="profile.html"
+            });
         }
 
     }
@@ -79,8 +82,11 @@ function deletProfile(){
             window.localStorage.setItem('user', "");
             window.localStorage.setItem('pass', "");
             window.localStorage.setItem('tempId', '');
-            swal("Data deleted!", "come back soon!", "success");
-            window.location.href = "index.html"
+            swal("Data deleted!", "come back soon!", "success")
+            .then((value) => {
+                window.location.href="index.html"
+            });
+           
             
         }
 
