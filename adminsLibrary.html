@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,17 +32,60 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
+
 <body>
     <main>
-<button class="btn btn-primary" onclick="getItems()">generate</button>
-<section class="adminCardsArea">
-    
+
+        <div id="fTopdiv">
+
+            <div id="formSignIn">
+                <div class="form-group" style="text-align: left">
+                    <div class="col">
+                        <h6>Hotel information</h6>
+                        <label for="hotelId">Id</label>
+                        <input type="text" class="form-control" id="hotelId">
+                    </div>
+                    <div class="col">
+
+                        <label for="userName">Hotel name</label>
+                        <input type="text" class="form-control" id="userName">
+                    </div>
+                    <div class="col">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                    </div>
+
+                    <div class="col">
+                        <label for="phone">Phone</label>
+                        <input type="text" class="form-control phone" id="phone">
+                    </div>
+
+
+                    <div class="col">
+                        <label for="about1">about</label>
+                        <textarea rows="4" class="form-control" id="about1"></textarea>
+                    </div>
+                    <div class="col">
+                        <label for="address1">address</label>
+                        <input type="text" class="form-control" id="address1">
+                    </div>
+
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary submitbtn" onclick="updateItems()">Update</button>
+                <button class="btn btn-primary" onclick="getItems()"
+                    style="background-color: rgba(4, 141, 61, 0.883);">Generate Hotels</button>
+            </div>
 
 
 
+        </div>
+
+        <section class="adminCardsArea">
 
     </main>
     <script src="main.js"></script>
     <script src="adminsLibrary.js"></script>
 </body>
+
 </html>

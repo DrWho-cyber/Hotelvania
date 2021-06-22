@@ -1,7 +1,18 @@
 var input = document.querySelector("#formFileMultiple");
+var inputProfile = document.querySelector("#uploadFile");
 var picturesArr = [];
+var profPicture = [];
 
-
+inputProfile.addEventListener("change", function () {
+   
+        const reader = new FileReader();
+        reader.readAsDataURL(this.files[0]);
+        reader.onload = function () {
+            profPicture.push(reader.result);
+            console.log(profPicture);
+        }
+    
+});
 
 input.addEventListener("change", function () {
     for (let i = 0; i < this.files.length; i++) {
@@ -26,7 +37,7 @@ function creatNewHotelinf() {
     if (email == "" || HotelName == "" || address == "" || phone == "" || about == "") {
         alert("All feilds are required!, please try again!")
     } else {
-        firebase.database().ref("Hotels/" + unicId).set(creatHotelUser(email, HotelName, address, phone, about, userCategory, picturesArr));
+        firebase.database().ref("Hotels/" + unicId).set(creatHotelUser(email, HotelName, address, phone, about, userCategory, picturesArr, profPicture));
         alert("Registered!");
     }
 
@@ -34,7 +45,7 @@ function creatNewHotelinf() {
 }
 
 
-function creatHotelUser(email, HotelName, address, phone, about, userCategory, picturesArr) {
+function creatHotelUser(email, HotelName, address, phone, about, userCategory, picturesArr, profPicture) {
     return {
         email: email,
         HotelName: HotelName,
@@ -42,7 +53,8 @@ function creatHotelUser(email, HotelName, address, phone, about, userCategory, p
         phone: phone,
         about: about,
         userCategory: userCategory,
-        picturesArr: picturesArr
+        picturesArr: picturesArr,
+        profPicture: profPicture
     };
 }
 
