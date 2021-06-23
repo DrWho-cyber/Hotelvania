@@ -21,10 +21,10 @@ function getItems() {
 
         adminCardsArea.innerHTML += `
         <section class="hotelCard card" style="width: 37.7rem">
-        <img src="${hotelsArray[i].data.profPicture[0]}" alt="...">
+        <img class="${hotelsArray[i].id}" src="${hotelsArray[i].data.profPicture[0]}" alt="...">
         <div class="uploadProfile">
-            <label for="${hotelsArray[i].id}">Change Picture</label>
-            <input type="file" class="form-control-file uploadFile" id="${hotelsArray[i].id}" onchange="pictureUpload(this.id)">
+            <label for="${hotelsArray[i].id}"><i class="fas fa-camera"></i></label>
+            <input type="file" class="form-control-file uploadFile" id="${hotelsArray[i].id}" onchange="pictureUpload(this.id, event)">
         </div>
         <div class="card-body">
           <h5 class="card-title"><strong>${HotelName}</strong></h5>
@@ -35,7 +35,7 @@ function getItems() {
           <p class="card-text"><strong>Adress:</strong> ${address}</p>
           <a href="#" class="btn btn-primary">${userCategory}</a>
           <button type="button" class="btn btn-danger" id="${hotelsArray[i].id}" onclick="deleteHotel(this.id)">Delete</button>
-          <button type="button" class="btn btn-primary" id="${hotelsArray[i].id}" onclick="getHotelInfo(this.id)">Info</button>
+          <button type="button" class="btn btn-primary" id="${hotelsArray[i].id}" onclick="getHotelInfo(this.id)">Update Info</button>
           <button type="button" class="btn btn-success" id="${hotelsArray[i].id}">rooms</button>
         </div>
       </div>
@@ -111,14 +111,21 @@ var input = document.querySelector("#formFileMultiple");
 var picturesArr = [];
 
 
-function pictureUpload(id) {
-    const profPicture = [];
-    var inputProfile = document.querySelector(".uploadFile");
-    const reader = new FileReader();
-    reader.readAsDataURL(inputProfile.files[0]);
-    reader.onload = function () {
-        profPicture.push(reader.result);
-        firebase.database().ref('Hotels/' + id + "/profPicture/0").set(`${profPicture[0]}`);
+function pictureUpload(id, event) {
+    if (event.target.files.length > 0) {
+        let src
+        console.log(src = URL.createObjectURL(event.target.files[0]));
+        console.log(event.target.files[0]);
+        console.log($(`.${id}`).attr("src", src));
+        firebase.database().ref('Hotels/' + id + "/profPicture/0").set(`${src}`);
+
+        const reader = new FileReader();
+        reader.readAsDataURL(event.target.files[0]);
+        reader.onload = function () {
+            let profPicture = [];
+            profPicture.push(reader.result);
+            firebase.database().ref('Hotels/' + id + "/profPicture/0").set(`${profPicture[0]}`);
+        }
     }
 
 }
@@ -140,6 +147,3 @@ input.addEventListener("change", function () {
     }
 });
 
-// function changeProfilePicture(){
-
-// }
