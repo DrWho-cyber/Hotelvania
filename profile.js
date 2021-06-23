@@ -1,7 +1,6 @@
 function getItems() {
     var userLocalStorage = window.localStorage.getItem('user');
     var passwordLocalStorage = window.localStorage.getItem('pass');
-
     var usersArray = [];
     var ref = firebase.database().ref("Users").on('value', function (response) {
         response.forEach(function (item) {
