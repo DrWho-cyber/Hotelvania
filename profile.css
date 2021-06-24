@@ -37,3 +37,16 @@ input:focus, textarea:focus {
 }
 
 /* the end */
+
+@media screen and (max-width:800px){
+    h6 {
+        margin: 50px auto!important;
+    }
+    .btn {
+        margin-top: 8px;
+    }
+
+    #fbottomdiv {
+        position: static;
+    }
+}

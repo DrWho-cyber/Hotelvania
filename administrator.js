@@ -4,7 +4,7 @@ var picturesArr = [];
 var profPicture = [];
 
 inputProfile.addEventListener("change", function () {
-   
+        
         const reader = new FileReader();
         reader.readAsDataURL(this.files[0]);
         reader.onload = function () {
@@ -15,6 +15,7 @@ inputProfile.addEventListener("change", function () {
 });
 
 input.addEventListener("change", function () {
+    
     for (let i = 0; i < this.files.length; i++) {
         const reader = new FileReader();
         reader.readAsDataURL(this.files[i]);
@@ -40,7 +41,8 @@ function creatNewHotelinf() {
         firebase.database().ref("Hotels/" + unicId).set(creatHotelUser(email, HotelName, address, phone, about, userCategory, picturesArr, profPicture));
         alert("Registered!");
     }
-
+     picturesArr = [];
+     profPicture = [];
     $("#HotelRegistration")[0].reset();
 }
 

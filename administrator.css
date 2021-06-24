@@ -6,7 +6,7 @@ form {
     display: flex;
     flex-direction: column;
     color: white;
-    width: 20%;
+    max-width: 25%;
     margin: 100px auto;
     margin-bottom: 50px;
     justify-content: space-between;
@@ -78,4 +78,35 @@ position: absolute;
 margin: auto;
 left: 0px;
 right: 0px;
+}
+
+
+@media screen and (max-width:1024px) {
+    form {   
+        margin-top: 200px;
+        max-width: 45%;   
+    }
+
+    h3 {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width:800px) {
+    form {
+        margin-top: 50px;   
+        max-width: 85%;   
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    .btn-danger {
+        width: 84.5%;
+        margin-top: -35px;
+    }
+    body {
+        padding-bottom: 40px;
+    }
 }

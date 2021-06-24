@@ -53,14 +53,15 @@ main {
 }
 
 .adminCardsArea {
-    max-width: 62%;
+    width: 70%;
     margin-top: 10px;
-    margin-left: 10px;
+    margin-left: 20px;
     min-height: 500px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    
 }
 
 .card {
@@ -69,7 +70,6 @@ main {
     margin-bottom: 10px;
     flex-direction: row;
     background-color: black;
-    margin-left: -20px;
 }
 
 .card img {
@@ -91,6 +91,8 @@ main {
 .btn {
     width: 80%;
     margin: 10px auto;
+    border: none;
+    font-weight: 500;
 }
 
 .btn:focus {

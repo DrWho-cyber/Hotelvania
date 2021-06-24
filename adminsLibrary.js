@@ -17,8 +17,8 @@ function getItems() {
         const phone = hotelsArray[i].data.phone;
         const about = hotelsArray[i].data.about;
         const userCategory = hotelsArray[i].data.userCategory;
-
-
+        const idForUserCategoryBtn = hotelsArray[i].id + 1;
+        console.log(userCategory);
         adminCardsArea.innerHTML += `
         <section class="hotelCard card" style="width: 37.7rem">
         <img class="${hotelsArray[i].id}" src="${hotelsArray[i].data.profPicture[0]}" alt="...">
@@ -33,21 +33,55 @@ function getItems() {
           <h6>About hotel</h6>
           <p class="card-text" style="text-align:justify; width:300px">${about}</p>
           <p class="card-text"><strong>Adress:</strong> ${address}</p>
-          <a href="#" class="btn btn-primary">${userCategory}</a>
+          <button type="button" id="${idForUserCategoryBtn}" class="btn btn-primary" onclick="changeStatus(this.id)"></button>
           <button type="button" class="btn btn-danger" id="${hotelsArray[i].id}" onclick="deleteHotel(this.id)">Delete</button>
           <button type="button" class="btn btn-primary" id="${hotelsArray[i].id}" onclick="getHotelInfo(this.id)">Update Info</button>
-          <button type="button" class="btn btn-success" id="${hotelsArray[i].id}">rooms</button>
+          <a href="rooms.html" class="btn btn-success" id="${hotelsArray[i].id}" onclick="saveIdInLocalStorage(this.id)">rooms</a>
         </div>
       </div>
       </section>`
 
-        //  for (let j = 0; j < hotelsArray[i].data.picturesArr.length; j++) {
-        //             adminCardsArea.innerHTML += `<section class="hotelCard card" style="width: -15rem; border: none;">
-        //             <img src="${hotelsArray[i].data.picturesArr[j]}" alt="...">`
-        //         }
 
+        let element = document.getElementById(`${idForUserCategoryBtn}`);
+        if (userCategory == 0) {
+            element.innerHTML = "User";
+            element.style.backgroundColor = "blue";
+        } else {
+            element.innerHTML = "VIP";
+            element.style.backgroundColor = "rgb(255,204,51)";
+            element.style.color = "blue";
+        }
     }
 
+}
+
+
+function changeStatus(id) {
+    let element = document.getElementById(`${id}`);
+    let hotelId = id.slice(0, -1)
+    console.log(hotelId)
+    if (element.innerHTML == "User") {
+        element.innerHTML = "VIP";
+        element.style.backgroundColor = "rgb(255,204,51)";
+        element.style.color = "blue";
+        firebase.database().ref('Hotels/' + hotelId).update({userCategory: 1});
+    } else {
+        element.value = 0;
+        element.innerHTML = "User";
+        element.style.backgroundColor = "blue";
+        element.style.color = "white";
+        firebase.database().ref('Hotels/' + hotelId).update({userCategory: 0});
+    };
+}
+function creatHotelUserCategory(userCategory) {
+    return {
+        userCategory: userCategory
+    };
+}
+
+
+function saveIdInLocalStorage(id){
+    window.localStorage.setItem('currentHotelId', id);
 }
 
 function deleteHotel(id) {
