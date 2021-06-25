@@ -1,3 +1,7 @@
+a {
+    text-decoration: none;
+    color: black;
+}
 .roomsArea {
     width: 65%;
     margin:10px auto;
@@ -22,7 +26,7 @@
     justify-content: space-around;
     align-items: center;
     width: 40%;
-    margin: 50px auto;
+    margin: 10px auto;
 }
 
 
@@ -79,6 +83,12 @@ h1 {
     background-color: rgba(255, 0, 0, 0.726);
 }
 
+.bucket {
+    width: 33.9%;
+    font-size: 30px;
+    margin: auto;
+}
+
 .btn:focus{
     border: none!important;
     box-shadow: none!important;
@@ -87,4 +97,16 @@ input:focus, textarea:focus {
     border: none!important;
     border-bottom: solid 1px rgb(7, 7, 7)!important;
     box-shadow: none!important;
+}
+@media screen and (max-width:640px) {
+    .bucket {
+        margin-top: 10px;
+       text-align: center;
+    }
+
+
+    .btn, .form-label {
+        padding: 2px;
+        width: 100%;
+    }
 }

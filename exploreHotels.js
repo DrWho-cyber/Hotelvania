@@ -26,7 +26,7 @@ function searchForHotels() {
           <h6>About hotel</h6>
           <p class="card-text" style="text-align:justify; width:300px">${about}</p>
           <p class="card-text"><strong>Adress:</strong> ${address}</p>
-          <button type="button" class="btn btn-success" id="${hotelsArray[i].id}" onclick="getHotelrooms(this.id)">rooms</button>
+          <a href="roomsForUser.html" type="button" class="btn btn-success" id="${hotelsArray[i].id}" onclick="saveIdInLocalStorage(this.id)">rooms</a>
         </div>
       </div>
       </section>`} else { countFalses++ }
@@ -37,13 +37,9 @@ function searchForHotels() {
 }
 
 
-
-
-
-        //  for (let j = 0; j < hotelsArray[i].data.picturesArr.length; j++) {
-        //             adminCardsArea.innerHTML += `<section class="hotelCard card" style="width: -15rem; border: none;">
-        //             <img src="${hotelsArray[i].data.picturesArr[j]}" alt="...">`
-        //         }
+function saveIdInLocalStorage(id){
+        window.localStorage.setItem('currentHotelId', id);
+    }
 
 
 
