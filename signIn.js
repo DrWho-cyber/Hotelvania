@@ -14,7 +14,7 @@ function checkUserData() {
         } else if (element.data.username !== user && element.data.password !== pass){
             document.querySelector("#userName").value = '';
             document.querySelector("#password").value = '';
-            swal("Some Data in Incorrect!", "please try again!", "error");
+            
         }else{alert("error")}
 
     });
