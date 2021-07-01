@@ -15,7 +15,6 @@ function checkUserData() {
             document.querySelector("#userName").value = '';
             document.querySelector("#password").value = '';
         }
-
     });
     setTimeout(function () {
         alert("wrong user name of password");
