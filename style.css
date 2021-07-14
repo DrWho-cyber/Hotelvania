@@ -201,6 +201,11 @@ input:focus, textarea:focus {
     border-bottom: solid 1px rgb(7, 7, 7)!important;
     box-shadow: none!important;
 }
+/* badge */
 
+.badge-base {
+    width: 80%;
+    background-color: rgba(59, 47, 218, 0.37);
+}
 /* the end */
 
