@@ -204,8 +204,9 @@ input:focus, textarea:focus {
 /* badge */
 
 .badge-base {
-    width: 80%;
-    background-color: rgba(59, 47, 218, 0.37);
+    width: 30%;
+    margin:auto;
+    
 }
 /* the end */
 
